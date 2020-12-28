@@ -1,0 +1,1 @@
+d:\was8\bin\ws_ant.bat -f d:\scripts\wasscripts\ws_ant\deployHR.xml

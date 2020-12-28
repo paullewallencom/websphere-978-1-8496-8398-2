@@ -1,0 +1,88 @@
+dn: o=mycompany.org
+objectclass: top
+objectclass: organization
+o: mycompany.org
+
+dn: ou=users,o=mycompany.org
+objectclass:organizationalunit
+ou: users
+description: generic users branch
+
+dn: ou=groups,o=mycompany.org
+objectclass:organizationalunit
+ou: groups
+description: generic groups branch
+
+dn: ou=roles,o=mycompany.org
+objectclass:organizationalunit
+ou: roles
+description: generic roles branch
+
+dn: cn=wasadmin,ou=roles,o=mycompany.org
+cn: wasadmin
+uid: wasadmin
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+userpassword: wasadmin
+sn: wasadmin
+givenname: wasadmin
+title: wasadmin
+description: WAS Administrator
+
+dn: cn=ldapbind,ou=users,o=mycompany.org
+cn: ldapbind
+uid: ldapbind
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+userpassword: ldapbind
+sn: ldapbind
+givenname: ldapbind
+title: ldapbind
+description: ldapbind
+
+dn: cn=Bob Jackson,ou=users,o=mycompany.org
+cn: Bob Jackson
+uid: bjackson
+mail: bjackson@mycompany.org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+userpassword: password
+sn: Jackson
+givenname: Bob
+telephonenumber: 123456789
+title: WAS Administrator
+description: LDAP test user
+
+dn: cn=Mary Smith,ou=users,o=mycompany.org
+cn: Mary Smith
+uid: msmith
+mail: msmith@mycompany.org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+userpassword: password
+sn: Smith
+givenname: Mary
+telephonenumber: 123456789
+title: WAS Administrator
+description: LDAP test user
+
+dn: cn=wasadmins,ou=groups,o=mycompany.org
+objectclass: groupofnames
+cn: wasadmins
+description: WAS Admins
+# add the group members all of which are 
+# assumed to exist under people
+member: cn=Bob Jackson,ou=users,o=mycompany.org
+member: cn=Mary Smith,ou=users,o=mycompany.org
+member: cn=wasadmin,ou=roles,o=mycompany.org
+
+
+

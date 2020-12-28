@@ -1,0 +1,1 @@
+/var/apps/was8/profiles/appsrv01/bin/wsadmin.sh -lang jython -username wasadmin -password wasadmin -profile /root/was8book/jython/profileScript.py

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="HR Lister Application Depoyment" default="build-all" basedir=".">
+	<!-- global properties -->
+	<property name="hostName" value="localhost" />
+	<property name="connType" value="SOAP" />
+	<property name="port" value="8880" />
+	<property name="userId" value="wasadmin" />
+	<property name="password" value="wasadmin" />
+	<property name="deployEar.dir" value="d:\scripts\wasscripts\deploy" />
+	<property name="deployEar" value="HRListerEAR.ear" />
+	<property name="wasHome.dir" value="d:\was8" />
+	
+    <!-- mbean declaration" -->
+	<taskdef name="wasInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication" />
+	
+	<!-- installation Target-->
+	<target name="installEar">
+		<echo message="Deployable EAR File found at: ${deployEar.dir}/${deployEar}" />
+		<wasInstallApp ear="${deployEar.dir}/${deployEar}" 
+		wasHome="${wasHome.dir}" 
+		conntype="${connType}"
+		port="${port}" 
+		host="${hostName}" 
+		user="${userId}" 
+		password="${password}" />
+	</target>
+
+	<target name="build-all" depends="installEar">
+		<!--Main Target-->
+	</target>
+
+</project>

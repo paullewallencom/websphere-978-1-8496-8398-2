@@ -1,0 +1,1 @@
+/var/apps/was8/bin/ws_ant.sh -f /root/was8book/ws_ant/manageHR.xml
